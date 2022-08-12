@@ -1,0 +1,13 @@
+PURCHASE_DATA:
+  goods_price: 5000
+  cust_name: Rahmat Testiawan
+  cust_email: rahmat@gmail.com
+  cust_phone_num: 081880809090
+  cust_city: Cikonjen
+  address: Jalan Aryani Baha Nomor 12 Blok AC/DC
+  cust_postal_code: 19901
+
+CC_DATA:
+  cc_number: 4811111111111114
+  cc_expiration_date: 1224
+  cc_cvv: 123

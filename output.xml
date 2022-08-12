@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220603 14:39:08.009" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Cases" source="C:\Users\User\robot-fw\src\rbCode\test_cases">
+<suite id="s1-s1" name="User Successfully Purchase" source="C:\Users\User\robot-fw\src\rbCode\test_cases\user_successfully_purchase.robot">
+<test id="s1-s1-t1" name="User Successfully Purchase Product On MIdtrans" line="6">
+<kw name="User Open Midtrans Purchase Frontpage" library="purchase">
+<kw name="Navigate To MidTrans Frontpage" library="base_purchase">
+<kw name="Open Browser And Visit ${DOMAIN_URL}" library="general_resources" sourcename="Open Browser And Visit ${url}">
+<kw name="New Browser" library="Browser">
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220603 14:39:08.923" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\User\\robot-fw\\browser\\traces\\8b698af3-9189-4ff7-8eb8-67c03ba6c234"}</msg>
+<msg timestamp="20220603 14:39:10.451" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\User\\robot-fw\\browser\\traces\\8b698af3-9189-4ff7-8eb8-67c03ba6c234"}</msg>
+<status status="PASS" starttime="20220603 14:39:08.923" endtime="20220603 14:39:10.451"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>viewport={'WIDTH':${BROWSER_WIDTH}, 'HEIGHT':${BROWSER_HEIGHT}}</arg>
+<arg>ignoreHTTPSErrors=True</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220603 14:39:10.452" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": true, "bypassCSP": false, "viewport": {"width": 1280, "height": 720}, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220603 14:39:10.468" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220603 14:39:10.468" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': True, 'bypassCSP': False, 'viewport': {'width': 1280, 'height': 720}, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220603 14:39:10.451" endtime="20220603 14:39:10.468"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220603 14:39:11.374" level="INFO">Successfully initialized new page object and opened url: https://demo.midtrans.com</msg>
+<status status="PASS" starttime="20220603 14:39:10.468" endtime="20220603 14:39:11.374"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:08.922" endtime="20220603 14:39:11.374"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:08.922" endtime="20220603 14:39:11.375"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:08.922" endtime="20220603 14:39:11.375"/>
+</kw>
+<kw name="User Click Buy Now To Proceed The Purchase" library="purchase">
+<kw name="Click Buy Now Button" library="base_purchase">
+<kw name="Click" library="Browser">
+<arg>${btn_buynow}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220603 14:39:11.378" endtime="20220603 14:39:11.478"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.376" endtime="20220603 14:39:11.478"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.376" endtime="20220603 14:39:11.478"/>
+</kw>
+<kw name="User Input Mandatory Form For Purchasing Goods ${PURCHASE_DATA}" library="purchase" sourcename="User Input Mandatory Form For Purchasing Goods ${purchasedata}">
+<kw name="Input Goods Price" library="base_purchase">
+<arg>${purchasedata}[goods_price]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_goods_price}</arg>
+<arg>${goods_price}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.482" level="INFO">Fills the text '5000' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.481" endtime="20220603 14:39:11.519"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.480" endtime="20220603 14:39:11.519"/>
+</kw>
+<kw name="Input Customer Name" library="base_purchase">
+<arg>${purchasedata}[cust_name]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_name}</arg>
+<arg>${cust_name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.520" level="INFO">Fills the text 'Rahmat Testiawan' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.520" endtime="20220603 14:39:11.560"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.519" endtime="20220603 14:39:11.560"/>
+</kw>
+<kw name="Input Customer Email" library="base_purchase">
+<arg>${purchasedata}[cust_email]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_email}</arg>
+<arg>${cust_email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.561" level="INFO">Fills the text 'rahmat@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.561" endtime="20220603 14:39:11.589"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.560" endtime="20220603 14:39:11.589"/>
+</kw>
+<kw name="Input Customer Phone Number" library="base_purchase">
+<arg>${purchasedata}[cust_phone_num]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_phone_num}</arg>
+<arg>${cust_phone_num}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.590" level="INFO">Fills the text '081880809090' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.590" endtime="20220603 14:39:11.611"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.589" endtime="20220603 14:39:11.612"/>
+</kw>
+<kw name="Input Customer City" library="base_purchase">
+<arg>${purchasedata}[cust_city]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_city}</arg>
+<arg>${cust_city}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.612" level="INFO">Fills the text 'Cikonjen' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.612" endtime="20220603 14:39:11.639"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.612" endtime="20220603 14:39:11.640"/>
+</kw>
+<kw name="Input Customer Address" library="base_purchase">
+<arg>${purchasedata}[address]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_address}</arg>
+<arg>${cust_address}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.641" level="INFO">Fills the text 'Jalan Aryani Baha Nomor 12 Blok AC/DC' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.640" endtime="20220603 14:39:11.668"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.640" endtime="20220603 14:39:11.668"/>
+</kw>
+<kw name="Input Customer Postal Code" library="base_purchase">
+<arg>${purchasedata}[cust_postal_code]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_cust_postal_code}</arg>
+<arg>${cust_postal_code}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:11.669" level="INFO">Fills the text '19901' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:11.669" endtime="20220603 14:39:11.710"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.668" endtime="20220603 14:39:11.711"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.479" endtime="20220603 14:39:11.711"/>
+</kw>
+<kw name="User Click Checkout To Go To Payment Page" library="purchase">
+<kw name="Click Checkout Button" library="base_purchase">
+<kw name="Click" library="Browser">
+<arg>${btn_checkout}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220603 14:39:11.712" endtime="20220603 14:39:12.054"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.712" endtime="20220603 14:39:12.054"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:11.711" endtime="20220603 14:39:12.054"/>
+</kw>
+<kw name="User Click Credit Card On The List For Payment" library="purchase">
+<kw name="Click Payment List Using Credit card" library="base_payment">
+<kw name="Click" library="Browser">
+<arg>${payment_iframe} &gt;&gt;&gt; ${btn_list_cc}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220603 14:39:12.056" endtime="20220603 14:39:12.673"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.055" endtime="20220603 14:39:12.673"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.055" endtime="20220603 14:39:12.674"/>
+</kw>
+<kw name="User Input Credit Card Details For Payment ${CC_DATA}" library="purchase" sourcename="User Input Credit Card Details For Payment ${ccdetails}">
+<kw name="Input Credit Card Number" library="base_payment">
+<arg>${ccdetails}[cc_number]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${payment_iframe} &gt;&gt;&gt; ${input_cc_cardnumber}</arg>
+<arg>${cc_number}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:12.677" level="INFO">Fills the text '4811111111111114' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:12.677" endtime="20220603 14:39:12.785"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.676" endtime="20220603 14:39:12.785"/>
+</kw>
+<kw name="Input Credit Card Expiaration Date" library="base_payment">
+<arg>${ccdetails}[cc_expiration_date]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${payment_iframe} &gt;&gt;&gt; ${input_cc_expirationdate}</arg>
+<arg>${cc_expiration_date}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:12.786" level="INFO">Fills the text '1224' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:12.786" endtime="20220603 14:39:12.839"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.785" endtime="20220603 14:39:12.839"/>
+</kw>
+<kw name="Input Credit Card CVV" library="base_payment">
+<arg>${ccdetails}[cc_cvv]</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${payment_iframe} &gt;&gt;&gt; ${input_cc_cvv}</arg>
+<arg>${cc_cvv}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220603 14:39:12.840" level="INFO">Fills the text '123' in the given field.</msg>
+<status status="PASS" starttime="20220603 14:39:12.840" endtime="20220603 14:39:12.871"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.840" endtime="20220603 14:39:12.871"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:12.675" endtime="20220603 14:39:12.871"/>
+</kw>
+<status status="PASS" starttime="20220603 14:39:08.919" endtime="20220603 14:39:12.871"/>
+</test>
+<doc>Feature: Customer Purchase</doc>
+<status status="PASS" starttime="20220603 14:39:08.030" endtime="20220603 14:39:13.002"/>
+</suite>
+<status status="PASS" starttime="20220603 14:39:08.013" endtime="20220603 14:39:13.012"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="User Successfully Purchase">Test Cases.User Successfully Purchase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
