@@ -17,3 +17,20 @@ Open Browser And Visit ${url}
     New Context    viewport={'WIDTH':${BROWSER_WIDTH}, 'HEIGHT':${BROWSER_HEIGHT}}    ignoreHTTPSErrors=True
     New Page    ${url}
 
+#General Function Base
+
+Click Choice
+    [Arguments]    ${elements}
+    Click    ${elements}
+
+Click Choice On IFrame
+    [Arguments]    ${iframe_elements}    ${elements}
+    Click    ${iframe_elements} >>> ${elements}
+
+Fill In Form
+    [Arguments]    ${elements}    ${form_value}
+    Fill Text    ${elements}    ${form_value}ß
+
+Fill In Form IFrame
+    [Arguments]    ${iframe_elements}    ${elements}    ${form_value}
+    Fill Text    ${iframe_elements} >>> ${elements}    ${form_value}

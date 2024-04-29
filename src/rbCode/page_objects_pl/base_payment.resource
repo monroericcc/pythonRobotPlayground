@@ -10,17 +10,17 @@ ${input_cc_expirationdate}    xpath=//input[@autocomplete='cc-exp']
 ${input_cc_cvv}    xpath=//input[@autocomplete='cc-csc']
 
 *** Keywords ***
-Click Payment List Using Credit card 
-    Click    ${payment_iframe} >>> ${btn_list_cc}
+Click Payment List Using Credit card
+    Click Choice On IFrame    ${payment_iframe}    ${btn_list_cc}
 
 Input Credit Card Number
     [Arguments]    ${cc_number}
-    Fill Text    ${payment_iframe} >>> ${input_cc_cardnumber}    ${cc_number}
+    Fill In Form IFrame    ${payment_iframe}    ${input_cc_cardnumber}    ${cc_number}
 
 Input Credit Card Expiaration Date
     [Arguments]    ${cc_expiration_date}
-    Fill Text    ${payment_iframe} >>> ${input_cc_expirationdate}    ${cc_expiration_date}
+    Fill In Form IFrame    ${payment_iframe}    ${input_cc_expirationdate}    ${cc_expiration_date}
 
 Input Credit Card CVV
     [Arguments]    ${cc_cvv}
-    Fill Text    ${payment_iframe} >>> ${input_cc_cvv}    ${cc_cvv}
+    Fill In Form IFrame    ${payment_iframe}    ${input_cc_cvv}    ${cc_cvv}

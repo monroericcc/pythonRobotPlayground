@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    general_resources.resource
+Resource   general_resources.resource
 Library    Browser
 
 *** Variables ***
@@ -18,34 +18,35 @@ Navigate To MidTrans Frontpage
     Open Browser And Visit ${DOMAIN_URL}
 
 Click Buy Now Button
-    Click    ${btn_buynow}
+    Click Choice    ${btn_buynow}
 
 Input Goods Price
     [Arguments]    ${goods_price}
-    Fill Text    ${input_goods_price}    ${goods_price}    
+    Fill In Form    ${input_goods_price}    ${goods_price}   
+
 Input Customer Name
     [Arguments]    ${cust_name}
-    Fill Text    ${input_cust_name}     ${cust_name}
+    Fill In Form    ${input_cust_name}     ${cust_name}
 
 Input Customer Email
     [Arguments]    ${cust_email}
-    Fill Text    ${input_cust_email}    ${cust_email}
+    Fill In Form    ${input_cust_email}    ${cust_email}
 
 Input Customer Phone Number
     [Arguments]    ${cust_phone_num}
-    Fill Text    ${input_cust_phone_num}    ${cust_phone_num}
+    Fill In Form    ${input_cust_phone_num}    ${cust_phone_num}
 
 Input Customer City
     [Arguments]    ${cust_city}
-    Fill Text    ${input_cust_city}    ${cust_city}
+    Fill In Form    ${input_cust_city}    ${cust_city}
 
 Input Customer Address
     [Arguments]    ${cust_address}
-    Fill Text    ${input_cust_address}    ${cust_address}
+    Fill In Form    ${input_cust_address}    ${cust_address}
 
 Input Customer Postal Code
     [Arguments]    ${cust_postal_code}
-    Fill Text    ${input_cust_postal_code}    ${cust_postal_code}
+    Fill In Form    ${input_cust_postal_code}    ${cust_postal_code}
 
 Click Checkout Button
-    Click    ${btn_checkout}
+    Click Choice    ${btn_checkout}
