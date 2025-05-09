@@ -34,3 +34,6 @@ Fill In Form
 Fill In Form IFrame
     [Arguments]    ${iframe_elements}    ${elements}    ${form_value}
     Fill Text    ${iframe_elements} >>> ${elements}    ${form_value}
+
+Screenshot Page
+    Take Screenshot    log_screenshot=true    fullPage=true

@@ -9,5 +9,5 @@ PURCHASE_DATA:
 
 CC_DATA:
   cc_number: 4811111111111114
-  cc_expiration_date: 1224
+  cc_expiration_date: 1225
   cc_cvv: 123

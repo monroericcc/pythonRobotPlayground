@@ -20,6 +20,7 @@ User Input Mandatory Form For Purchasing Goods ${purchasedata}
     Input Customer Postal Code    ${purchasedata}[cust_postal_code]
 
 User Click Checkout To Go To Payment Page
+    Take Screenshot
     Click Checkout Button
 
 User Click Credit Card On The List For Payment
@@ -29,3 +30,4 @@ User Input Credit Card Details For Payment ${ccdetails}
     Input Credit Card Number    ${ccdetails}[cc_number]
     Input Credit Card Expiaration Date    ${ccdetails}[cc_expiration_date]
     Input Credit Card CVV    ${ccdetails}[cc_cvv]
+    Take Screenshot
